@@ -1,28 +1,28 @@
 package com.hbsd.day0501;
 
 public class Manager extends Employee{
-    private double bouns;
+    private double bonus;
 
     public Manager() {
         super();
     }
 
-    public Manager(String id, String name, double baseSalary, double bouns) {
+    public Manager(String id, String name, double baseSalary, double bonus) {
         super(id, name, baseSalary);
-        this.bouns = bouns;
+        this.bonus = bonus;
     }
 
-    public double getBouns() {
-        return bouns;
+    public double getBonus() {
+        return bonus;
     }
 
-    public void setBouns(double bouns) {
-        this.bouns = bouns;
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
     }
 
     @Override
     public double getBaseSalary(){
-        return super.getBaseSalary() + bouns;
+        return super.getBaseSalary() + bonus;
     }
 
 

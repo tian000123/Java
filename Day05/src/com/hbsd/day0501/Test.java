@@ -9,5 +9,9 @@ public class Test {
 
         Employee user2 = new Employee("001","张三",3000);
 
+        Employee emp = new Manager();
+        double s = emp.getBaseSalary();
+
+        Employee emp1 = new Manager();
     }
 }
