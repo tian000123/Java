@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: SpringbootDemo
+  profiles:
+    active: dev
+
+  # 文件配置
+  servlet:
+    multipart:
+      # 单个文件最大大小
+      max-file-size: 10MB
+      # 单次请求最大大小
+      max-request-size: 100MB
+      # 文件写入磁盘的阈值
+      file-size-threshold: 0
+
+file:
+  upload:
+    # 文件存储路径（相对于项目根目录或绝对路径）
+    path: "./uploads"
+    # 文件访问URL前缀
+    url-prefix: "/uploads"
+    # 允许上传的文件类型（白名单，逗号分隔）
+    allowed-types: "jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx,txt"
+    # 单个文件最大大小（MB）
+    max-file-size: 10
+    # 是否按日期创建子目录存储
+    use-date-path: true
+
+

@@ -1,0 +1,70 @@
+# 【开发环境特点】
+# 用途：专注于本地开发与功能调试
+# 配置：连接本地数据库，开启DEBUG级详细日志
+
+spring:
+  # 应用名称配置
+  application:
+    name: SpringBootDemo
+
+  # ============================================
+  # 开发环境日志配置
+  # ============================================
+  # 开发环境需要详细的日志输出以便调试
+  # 日志级别：TRACE < DEBUG < INFO < WARN < ERROR
+  #
+  # 配置说明：
+  # - root: INFO 表示根日志级别为INFO
+  # - com.hbsd.demo: DEBUG 表示项目代码输出DEBUG级别日志
+  # - org.springframework.web: DEBUG 输出Spring Web详细日志
+  # ============================================
+  logging:
+    level:
+      root: INFO
+      com.hbsd.demo.springbootdemo: DEBUG
+      org.springframework.web: DEBUG
+      org.hibernate.SQL: DEBUG  # 输出Hibernate执行的SQL语句
+    # 日志输出格式配置
+    pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# ============================================
+# 开发服务器配置
+# ============================================
+# 开发环境使用本地服务器，便于调试
+server:
+  # 开发环境使用8080端口
+  port: 8080
+
+# ============================================
+# 自定义应用配置 - 开发环境
+# ============================================
+app:
+  # 应用标识
+  name: "SpringBoot教学项目-开发环境"
+  version: "1.0.0"
+  description: "这是一个用于教学的SpringBoot项目（开发环境）"
+  author: "HBSD"
+
+# ============================================
+# 数据库配置 - 开发环境（PostgreSQL）
+# ============================================
+# 开发环境连接本地PostgreSQL数据库
+#
+# 【PostgreSQL连接说明】
+# JDBC URL格式：jdbc:postgresql://host:port/database
+# 默认端口：5432
+# 驱动类：org.postgresql.Driver
+
+db:
+  # PostgreSQL连接URL
+  # localhost:5432 - PostgreSQL默认地址和端口
+  # springboot_demo_dev - 数据库名
+  url: jdbc:postgresql://localhost:5432/springboot_demo_dev
+  username: postgres
+  password: postgres
+  driver-class-name: org.postgresql.Driver
+  # 开发环境连接池配置（较小）
+  max-connections: 5
+  min-idle: 2
+  connection-timeout: 30000
